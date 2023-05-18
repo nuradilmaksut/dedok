@@ -34,6 +34,20 @@ export function isNotEqual(firstText, secondText) {
 
 /** возвращает булевый ответ больше ли параметр firstText чем secondText. */
 export function isMore(firstText, secondText) {
+    if (typeof(firstText) !== 'string'
+    || typeof(secondText) !== 'string') throw Error('argument must be type of string');
+
+    const textLength = len(firstText) > len(secondText)
+    ? len(firstText)
+    : len(secondText);
+
+    for (let i = 0; i < textLength; i += 1) {
+        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)) return false;
+    }
+
+    if (isEqual(firstText, secondText)) return false;
+
+    return true;
 }
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */

@@ -103,60 +103,60 @@ describe('isMoreTests', () => {
     assertToBe(isMore('ca', 'ba'), true);
     assertToBe(isMore('cca', 'cba'), true);
   });
-  // test('первая строка не больше второй по первым символам', () => {
-  //   assertToBe(isMore('ab', 'ac'), false);
-  //   assertToBe(isMore('cba', 'cca'), false);
-  // });
-  // test('первая строка больше второй по последнему символу', () => {
-  //   assertToBe(isMore('abc', 'abb'), true);
-  // });
-  // test('первая строка не больше второй по последнему символу', () => {
-  //   assertToBe(isMore('abb', 'abc'), false);
-  // });
-  // test('первая и вторая равны', () => {
-  //   assertToBe(isMore('abb', 'abb'), false);
-  // });
-  // test('первая больше по длине и по содержанию', () => {
-  //   assertToBe(isMore('abca', 'abb'), true);
-  // });
-  // test('первая больше по длине, но меньше по содержанию', () => {
-  //   assertToBe(isMore('abaa', 'abb'), false);
-  // });
-  // test('первая и вторая равны по содержанию, но первая больше по длине', () => {
-  //   assertToBe(isMore('abba', 'abb'), true);
-  // });
-  // test('первая и вторая равны по содержанию, но вторая больше по длине', () => {
-  //   assertToBe(isMore('abb', 'abba'), false);
-  // });
-  // test('первая меньше по длине и но больше по содержанию', () => {
-  //   assertToBe(isMore('abc', 'abba'), true);
-  // });
-  // test('первая меньше по длине и по содержанию', () => {
-  //   assertToBe(isMore('abb', 'abca'), false);
-  // });
-  // test('пустые строки не больше чем пустая строка', () => {
-  //   assertToBe(isMore('', ''), false);
-  // });
-  // test('пустая строка не больше чем непустая строка', () => {
-  //   assertToBe(isMore('', ZERO_CODE_CHAR), false);
-  // });
-  // test('не пустая строка больше чем пустая', () => {
-  //   assertToBe(isMore(ZERO_CODE_CHAR, ''), true);
-  // });
-  // test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isMore('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isMore('2', true), 'argument must be type of string');
-  //   assertThrow(() => isMore('2', []), 'argument must be type of string');
-  //   assertThrow(() => isMore('2', null), 'argument must be type of string');
-  //   assertThrow(() => isMore('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isMore(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMore(true, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMore([], '2'), 'argument must be type of string');
-  //   assertThrow(() => isMore(undefined, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMore(null, '2'), 'argument must be type of string');
-  // });
+  test('первая строка не больше второй по первым символам', () => {
+    assertToBe(isMore('ab', 'ac'), false);
+    assertToBe(isMore('cba', 'cca'), false);
+  });
+  test('первая строка больше второй по последнему символу', () => {
+    assertToBe(isMore('abc', 'abb'), true);
+  });
+  test('первая строка не больше второй по последнему символу', () => {
+    assertToBe(isMore('abb', 'abc'), false);
+  });
+  test('первая и вторая равны', () => {
+    assertToBe(isMore('abb', 'abb'), false);
+  });
+  test('первая больше по длине и по содержанию', () => {
+    assertToBe(isMore('abca', 'abb'), true);
+  });
+  test('первая больше по длине, но меньше по содержанию', () => {
+    assertToBe(isMore('abaa', 'abb'), false);
+  });
+  test('первая и вторая равны по содержанию, но первая больше по длине', () => {
+    assertToBe(isMore('abba', 'abb'), true);
+  });
+  test('первая и вторая равны по содержанию, но вторая больше по длине', () => {
+    assertToBe(isMore('abb', 'abba'), false);
+  });
+  test('первая меньше по длине и но больше по содержанию', () => {
+    assertToBe(isMore('abc', 'abba'), true);
+  });
+  test('первая меньше по длине и по содержанию', () => {
+    assertToBe(isMore('abb', 'abca'), false);
+  });
+  test('пустые строки не больше чем пустая строка', () => {
+    assertToBe(isMore('', ''), false);
+  });
+  test('пустая строка не больше чем непустая строка', () => {
+    assertToBe(isMore('', ZERO_CODE_CHAR), false);
+  });
+  test('не пустая строка больше чем пустая', () => {
+    assertToBe(isMore(ZERO_CODE_CHAR, ''), true);
+  });
+  test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isMore('2', 2), 'argument must be type of string');
+    assertThrow(() => isMore('2', true), 'argument must be type of string');
+    assertThrow(() => isMore('2', []), 'argument must be type of string');
+    assertThrow(() => isMore('2', null), 'argument must be type of string');
+    assertThrow(() => isMore('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isMore(2, '2'), 'argument must be type of string');
+    assertThrow(() => isMore(true, '2'), 'argument must be type of string');
+    assertThrow(() => isMore([], '2'), 'argument must be type of string');
+    assertThrow(() => isMore(undefined, '2'), 'argument must be type of string');
+    assertThrow(() => isMore(null, '2'), 'argument must be type of string');
+  });
 });
 
 describe('isLessTests', () => {
