@@ -1,13 +1,12 @@
 import { len } from "./len.js";
+import { areNotStrings } from "./are-not-strings.js";
+import { getMoreTextLength } from "./get-more-text-length.js";
 
 /** возвращает булевый ответ равны ли параметры firstText и secondText. */
 export function isEqual(firstText, secondText) {
-    if (typeof(firstText) !== 'string'
-    || typeof(secondText) !== 'string') throw Error('argument must be type of string');
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
 
-    const textLength = len(firstText) > len(secondText)
-    ? len(firstText)
-    : len(secondText);
+    const textLength = getMoreTextLength(firstText, secondText);
 
     for (let i = 0; i < textLength; i += 1) {
         if(firstText[i] !== secondText[i]) return false;
@@ -18,12 +17,9 @@ export function isEqual(firstText, secondText) {
 
 /** возвращает true если аргументы не равны, и false в иных случаях. */
 export function isNotEqual(firstText, secondText) {
-    if (typeof(firstText) !== 'string'
-    || typeof(secondText) !== 'string') throw Error('argument must be type of string');
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
 
-    const textLength = len(firstText) > len(secondText)
-    ? len(firstText)
-    : len(secondText);
+    const textLength = getMoreTextLength(firstText, secondText);
 
     for (let i = 0; i < textLength; i += 1) {
         if(firstText[i] !== secondText[i]) return true;
@@ -34,20 +30,15 @@ export function isNotEqual(firstText, secondText) {
 
 /** возвращает булевый ответ больше ли параметр firstText чем secondText. */
 export function isMore(firstText, secondText) {
-    if (typeof(firstText) !== 'string'
-    || typeof(secondText) !== 'string') throw Error('argument must be type of string');
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
 
-    const textLength = len(firstText) > len(secondText)
-    ? len(firstText)
-    : len(secondText);
+    const textLength = getMoreTextLength(firstText, secondText);
 
     for (let i = 0; i < textLength; i += 1) {
-        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)) return false;
+        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)) return true;
     }
 
-    if (isEqual(firstText, secondText)) return false;
-
-    return true;
+    return false;
 }
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */
