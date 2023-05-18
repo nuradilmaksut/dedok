@@ -1,4 +1,4 @@
-import { len } from "./len";
+import { len } from "./len.js";
 
 /** возвращает булевый ответ равны ли параметры firstText и secondText. */
 export function isEqual(firstText, secondText) {
