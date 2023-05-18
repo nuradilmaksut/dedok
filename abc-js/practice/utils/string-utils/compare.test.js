@@ -10,46 +10,46 @@ describe('isEqualTests', () => {
     assertToBe(isEqual('a', 'a'), true);
     assertToBe(isEqual('a', 'b'), false);
   });
-  // test('количество символов одинаково, но не равны', () => {
-  //   assertToBe(isEqual('abc', 'abc'), true);
-  //   assertToBe(isEqual('abc', 'abb'), false);
-  // });
-  // test('символы совпадают, но у первого больше символов', () => {
-  //   assertToBe(isEqual('abbb', 'abb'), false);
-  // });
-  // test('символы совпадают, но у второго больше символов', () => {
-  //   assertToBe(isEqual('abb', 'abbb'), false);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isEqual('', ''), true);
-  // });
-  // test('пустые и непустая строка', () => {
-  //   assertToBe(isEqual('', 'a'), false);
-  //   assertToBe(isEqual('a', ''), false);
-  //   assertToBe(isEqual('', 'abc'), false);
-  // });
-  // test('сложные одинаковые строки', () => {
-  //   assertToBe(isEqual(complexText, complexText), true);
-  // });
-  // test('сложные строки различной длины', () => {
-  //   assertToBe(isEqual(complexText + 'a', complexText), false);
-  //   assertToBe(isEqual(complexText + '\n', complexText), false);
-  //   assertToBe(isEqual(complexText + ZERO_CODE_CHAR, complexText), false);
-  // });
-  // test('несоответствие типа второго аргумента приводит к исключению', () => {
-  //   assertThrow(() => isEqual('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isEqual('2', true), 'argument must be type of string');
-  //   assertThrow(() => isEqual('2', []), 'argument must be type of string');
-  //   assertThrow(() => isEqual('2', null), 'argument must be type of string');
-  //   assertThrow(() => isEqual('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к исключению', () => {
-  //   assertThrow(() => isEqual(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isEqual(true, '1'), 'argument must be type of string');
-  //   assertThrow(() => isEqual([], '1'), 'argument must be type of string');
-  //   assertThrow(() => isEqual(null, '1'), 'argument must be type of string');
-  //   assertThrow(() => isEqual(undefined, '1'), 'argument must be type of string');
-  // });
+  test('количество символов одинаково, но не равны', () => {
+    assertToBe(isEqual('abc', 'abc'), true);
+    assertToBe(isEqual('abc', 'abb'), false);
+  });
+  test('символы совпадают, но у первого больше символов', () => {
+    assertToBe(isEqual('abbb', 'abb'), false);
+  });
+  test('символы совпадают, но у второго больше символов', () => {
+    assertToBe(isEqual('abb', 'abbb'), false);
+  });
+  test('пустые строки', () => {
+    assertToBe(isEqual('', ''), true);
+  });
+  test('пустые и непустая строка', () => {
+    assertToBe(isEqual('', 'a'), false);
+    assertToBe(isEqual('a', ''), false);
+    assertToBe(isEqual('', 'abc'), false);
+  });
+  test('сложные одинаковые строки', () => {
+    assertToBe(isEqual(complexText, complexText), true);
+  });
+  test('сложные строки различной длины', () => {
+    assertToBe(isEqual(complexText + 'a', complexText), false);
+    assertToBe(isEqual(complexText + '\n', complexText), false);
+    assertToBe(isEqual(complexText + ZERO_CODE_CHAR, complexText), false);
+  });
+  test('несоответствие типа второго аргумента приводит к исключению', () => {
+    assertThrow(() => isEqual('2', 2), 'argument must be type of string');
+    assertThrow(() => isEqual('2', true), 'argument must be type of string');
+    assertThrow(() => isEqual('2', []), 'argument must be type of string');
+    assertThrow(() => isEqual('2', null), 'argument must be type of string');
+    assertThrow(() => isEqual('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к исключению', () => {
+    assertThrow(() => isEqual(2, '2'), 'argument must be type of string');
+    assertThrow(() => isEqual(true, '1'), 'argument must be type of string');
+    assertThrow(() => isEqual([], '1'), 'argument must be type of string');
+    assertThrow(() => isEqual(null, '1'), 'argument must be type of string');
+    assertThrow(() => isEqual(undefined, '1'), 'argument must be type of string');
+  });
 });
 
 describe('isNotEqualTests', () => {
@@ -57,45 +57,45 @@ describe('isNotEqualTests', () => {
     assertToBe(isNotEqual('a', 'a'), false);
     assertToBe(isNotEqual('a', 'b'), true);
   });
-  // test('количество символов одинаково, но не равны', () => {
-  //   assertToBe(isNotEqual('abc', 'abb'), true);
-  //   assertToBe(isNotEqual('abb', 'abc'), true);
-  // });
-  // test('символы совпадают, но у первого больше символов', () => {
-  //   assertToBe(isNotEqual('abbb', 'abb'), true);
-  // });
-  // test('символы совпадают, но у второго больше символов', () => {
-  //   assertToBe(isNotEqual('abb', 'abbb'), true);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isNotEqual('', ''), false);
-  // });
-  // test('пустые и непустая строка', () => {
-  //   assertToBe(isNotEqual('', 'a'), true);
-  //   assertToBe(isNotEqual('a', ''), true);
-  // });
-  // test('сложные одинаковые строки', () => {
-  //   assertToBe(isNotEqual(complexText, complexText), false);
-  // });
-  // test('сложные строки различной длины', () => {
-  //   assertToBe(isNotEqual(complexText + 'a', complexText), true);
-  //   assertToBe(isNotEqual(complexText + '\n', complexText), true);
-  //   assertToBe(isNotEqual(complexText + ZERO_CODE_CHAR, complexText), true);
-  // });
-  // test('несоответствие типа второго аргумента приводит к исключению', () => {
-  //   assertThrow(() => isNotEqual('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', true), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', []), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2', null), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к исключению', () => {
-  //   assertThrow(() => isNotEqual(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(true, '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual([], '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(null, '1'), 'argument must be type of string');
-  //   assertThrow(() => isNotEqual(undefined, '1'), 'argument must be type of string');
-  // });
+  test('количество символов одинаково, но не равны', () => {
+    assertToBe(isNotEqual('abc', 'abb'), true);
+    assertToBe(isNotEqual('abb', 'abc'), true);
+  });
+  test('символы совпадают, но у первого больше символов', () => {
+    assertToBe(isNotEqual('abbb', 'abb'), true);
+  });
+  test('символы совпадают, но у второго больше символов', () => {
+    assertToBe(isNotEqual('abb', 'abbb'), true);
+  });
+  test('пустые строки', () => {
+    assertToBe(isNotEqual('', ''), false);
+  });
+  test('пустые и непустая строка', () => {
+    assertToBe(isNotEqual('', 'a'), true);
+    assertToBe(isNotEqual('a', ''), true);
+  });
+  test('сложные одинаковые строки', () => {
+    assertToBe(isNotEqual(complexText, complexText), false);
+  });
+  test('сложные строки различной длины', () => {
+    assertToBe(isNotEqual(complexText + 'a', complexText), true);
+    assertToBe(isNotEqual(complexText + '\n', complexText), true);
+    assertToBe(isNotEqual(complexText + ZERO_CODE_CHAR, complexText), true);
+  });
+  test('несоответствие типа второго аргумента приводит к исключению', () => {
+    assertThrow(() => isNotEqual('2', 2), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', true), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', []), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2', null), 'argument must be type of string');
+    assertThrow(() => isNotEqual('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к исключению', () => {
+    assertThrow(() => isNotEqual(2, '2'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(true, '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual([], '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(null, '1'), 'argument must be type of string');
+    assertThrow(() => isNotEqual(undefined, '1'), 'argument must be type of string');
+  });
 });
 
 describe('isMoreTests', () => {
