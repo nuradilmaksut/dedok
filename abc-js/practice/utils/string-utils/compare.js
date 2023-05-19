@@ -32,10 +32,11 @@ export function isNotEqual(firstText, secondText) {
 export function isMore(firstText, secondText) {
     if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
 
-    const textLength = getMoreTextLength(firstText, secondText);
+    for (let i = 0; i < len(firstText); i += 1) {
+        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)
+        || secondText[i] === undefined) return true;
 
-    for (let i = 0; i < textLength; i += 1) {
-        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)) return true;
+        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)) return false;
     }
 
     return false;
@@ -43,12 +44,46 @@ export function isMore(firstText, secondText) {
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */
 export function isLess(firstText, secondText) {
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
+
+    for (let i = 0; i < len(secondText); i += 1) {
+        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)
+        || firstText[i] === undefined) return true;
+
+        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)) return false;
+    }
+
+    return false;
 }
 
 /** возвращает булевый ответ больше или равно ли параметр firstText чем secondText. */
 export function isMoreOrEqual(firstText, secondText) {
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
+
+    if(isEqual(firstText, secondText)) return true; 
+
+    for (let i = 0; i < len(firstText); i += 1) {
+        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)
+        || secondText[i] === undefined) return true;
+
+        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)) return false;
+    }
+
+    return false;
 }
 
 /** возвращает булевый ответ меньше или равно ли параметр firstText чем secondText. */
 export function isLessOrEqual(firstText, secondText) {
+    if (areNotStrings(firstText, secondText)) throw Error('argument must be type of string');
+
+    if(isEqual(firstText, secondText)) return true; 
+
+    for (let i = 0; i < len(secondText); i += 1) {
+        if (firstText.charCodeAt(i) < secondText.charCodeAt(i)
+        || firstText[i] === undefined) return true;
+
+        if (firstText.charCodeAt(i) > secondText.charCodeAt(i)) return false;
+    }
+
+    return false;
 }

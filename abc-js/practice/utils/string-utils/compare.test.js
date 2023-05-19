@@ -164,48 +164,48 @@ describe('isLessTests', () => {
     assertToBe(isLess('ba', 'ca'), true);
     assertToBe(isLess('cba', 'cca'), true);
   });
-  // test('первая строка не меньше второй по первым символам', () => {
-  //   assertToBe(isLess('ac', 'ab'), false);
-  //   assertToBe(isLess('cca', 'cba'), false);
-  // });
-  // test('первая строка меньше второй по последнему символу', () => {
-  //   assertToBe(isLess('abb', 'abc'), true);
-  // });
-  // test('первая строка не меньше второй по последнему символу', () => {
-  //   assertToBe(isLess('abc', 'abb'), false);
-  // });
-  // test('первая и вторая равны', () => {
-  //   assertToBe(isLess('abb', 'abb'), false);
-  // });
-  // test('первая и вторая равны по содержанию, но первая меньше по длине', () => {
-  //   assertToBe(isLess('abb', 'abb' + ZERO_CODE_CHAR), true);
-  // });
-  // test('первая и вторая равны по содержанию, но первая не меньше по длине', () => {
-  //   assertToBe(isLess('abb' + ZERO_CODE_CHAR, 'abb'), false);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isLess('', ''), false);
-  // });
-  // test('пустая строка меньше чем непустая строка', () => {
-  //   assertToBe(isLess('', ZERO_CODE_CHAR), true);
-  // });
-  // test('не пустая строка больше чем пустая', () => {
-  //   assertToBe(isLess(ZERO_CODE_CHAR, ''), false);
-  // });
-  // test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isLess('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isLess('2', true), 'argument must be type of string');
-  //   assertThrow(() => isLess('2', []), 'argument must be type of string');
-  //   assertThrow(() => isLess('2', null), 'argument must be type of string');
-  //   assertThrow(() => isLess('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isLess(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLess(true, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLess([], '2'), 'argument must be type of string');
-  //   assertThrow(() => isLess(undefined, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLess(null, '2'), 'argument must be type of string');
-  // });
+  test('первая строка не меньше второй по первым символам', () => {
+    assertToBe(isLess('ac', 'ab'), false);
+    assertToBe(isLess('cca', 'cba'), false);
+  });
+  test('первая строка меньше второй по последнему символу', () => {
+    assertToBe(isLess('abb', 'abc'), true);
+  });
+  test('первая строка не меньше второй по последнему символу', () => {
+    assertToBe(isLess('abc', 'abb'), false);
+  });
+  test('первая и вторая равны', () => {
+    assertToBe(isLess('abb', 'abb'), false);
+  });
+  test('первая и вторая равны по содержанию, но первая меньше по длине', () => {
+    assertToBe(isLess('abb', 'abb' + ZERO_CODE_CHAR), true);
+  });
+  test('первая и вторая равны по содержанию, но первая не меньше по длине', () => {
+    assertToBe(isLess('abb' + ZERO_CODE_CHAR, 'abb'), false);
+  });
+  test('пустые строки', () => {
+    assertToBe(isLess('', ''), false);
+  });
+  test('пустая строка меньше чем непустая строка', () => {
+    assertToBe(isLess('', ZERO_CODE_CHAR), true);
+  });
+  test('не пустая строка больше чем пустая', () => {
+    assertToBe(isLess(ZERO_CODE_CHAR, ''), false);
+  });
+  test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isLess('2', 2), 'argument must be type of string');
+    assertThrow(() => isLess('2', true), 'argument must be type of string');
+    assertThrow(() => isLess('2', []), 'argument must be type of string');
+    assertThrow(() => isLess('2', null), 'argument must be type of string');
+    assertThrow(() => isLess('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isLess(2, '2'), 'argument must be type of string');
+    assertThrow(() => isLess(true, '2'), 'argument must be type of string');
+    assertThrow(() => isLess([], '2'), 'argument must be type of string');
+    assertThrow(() => isLess(undefined, '2'), 'argument must be type of string');
+    assertThrow(() => isLess(null, '2'), 'argument must be type of string');
+  });
 });
 
 describe('isMoreOrEqualTests', () => {
@@ -213,48 +213,48 @@ describe('isMoreOrEqualTests', () => {
     assertToBe(isMoreOrEqual('ca', 'ba'), true);
     assertToBe(isMoreOrEqual('cca', 'cba'), true);
   });
-  // test('первая строка не больше второй по первому символу', () => {
-  //   assertToBe(isMoreOrEqual('ab', 'ac'), false);
-  //   assertToBe(isMoreOrEqual('cba', 'cca'), false);
-  // });
-  // test('первая строка больше второй по последнему символу', () => {
-  //   assertToBe(isMoreOrEqual('abc', 'abb'), true);
-  // });
-  // test('первая и вторая равны', () => {
-  //   assertToBe(isMoreOrEqual('abb', 'abb'), true);
-  // });
-  // test('первая строка не больше второй по последнему символу', () => {
-  //   assertToBe(isMoreOrEqual('abb', 'abc'), false);
-  // });
-  // test('первая и вторая равны по содержанию, но первая больше по длине', () => {
-  //   assertToBe(isMoreOrEqual('abb' + ZERO_CODE_CHAR, 'abb'), true);
-  // });
-  // test('первая и вторая равны по содержанию, но первая не больше по длине', () => {
-  //   assertToBe(isMoreOrEqual('abb', 'abb' + ZERO_CODE_CHAR), false);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isMoreOrEqual('', ''), true);
-  // });
-  // test('пустая строка не больше чем непустая строка', () => {
-  //   assertToBe(isMoreOrEqual('', ZERO_CODE_CHAR), false);
-  // });
-  // test('не пустая строка больше чем пустая', () => {
-  //   assertToBe(isMoreOrEqual(ZERO_CODE_CHAR, ''), true);
-  // });
-  // test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isMoreOrEqual('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual('2', true), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual('2', []), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual('2', null), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isMoreOrEqual(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual(true, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual([], '2'), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual(undefined, '2'), 'argument must be type of string');
-  //   assertThrow(() => isMoreOrEqual(null, '2'), 'argument must be type of string');
-  // });
+  test('первая строка не больше второй по первому символу', () => {
+    assertToBe(isMoreOrEqual('ab', 'ac'), false);
+    assertToBe(isMoreOrEqual('cba', 'cca'), false);
+  });
+  test('первая строка больше второй по последнему символу', () => {
+    assertToBe(isMoreOrEqual('abc', 'abb'), true);
+  });
+  test('первая и вторая равны', () => {
+    assertToBe(isMoreOrEqual('abb', 'abb'), true);
+  });
+  test('первая строка не больше второй по последнему символу', () => {
+    assertToBe(isMoreOrEqual('abb', 'abc'), false);
+  });
+  test('первая и вторая равны по содержанию, но первая больше по длине', () => {
+    assertToBe(isMoreOrEqual('abb' + ZERO_CODE_CHAR, 'abb'), true);
+  });
+  test('первая и вторая равны по содержанию, но первая не больше по длине', () => {
+    assertToBe(isMoreOrEqual('abb', 'abb' + ZERO_CODE_CHAR), false);
+  });
+  test('пустые строки', () => {
+    assertToBe(isMoreOrEqual('', ''), true);
+  });
+  test('пустая строка не больше чем непустая строка', () => {
+    assertToBe(isMoreOrEqual('', ZERO_CODE_CHAR), false);
+  });
+  test('не пустая строка больше чем пустая', () => {
+    assertToBe(isMoreOrEqual(ZERO_CODE_CHAR, ''), true);
+  });
+  test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isMoreOrEqual('2', 2), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual('2', true), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual('2', []), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual('2', null), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isMoreOrEqual(2, '2'), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual(true, '2'), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual([], '2'), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual(undefined, '2'), 'argument must be type of string');
+    assertThrow(() => isMoreOrEqual(null, '2'), 'argument must be type of string');
+  });
 });
 
 describe('isLessOrEqualTests', () => {
@@ -262,46 +262,46 @@ describe('isLessOrEqualTests', () => {
     assertToBe(isLessOrEqual('ba', 'ca'), true);
     assertToBe(isLessOrEqual('aba', 'aca'), true);
   });
-  // test('первая строка не меньше второй по первому символу', () => {
-  //   assertToBe(isLessOrEqual('ac', 'ab'), false);
-  //   assertToBe(isLessOrEqual('aca', 'aba'), false);
-  // });
-  // test('первая строка меньше второй по последнему символу', () => {
-  //   assertToBe(isLessOrEqual('abb', 'abc'), true);
-  // });
-  // test('первая и вторая равны', () => {
-  //   assertToBe(isLessOrEqual('abb', 'abb'), true);
-  // });
-  // test('вторая строка больше первой по последнему символу', () => {
-  //   assertToBe(isLessOrEqual('abc', 'abb'), false);
-  // });
-  // test('первая и вторая равны по содержанию, но первая меньше по длине', () => {
-  //   assertToBe(isLessOrEqual('abb', 'abb' + ZERO_CODE_CHAR), true);
-  // });
-  // test('первая и вторая равны по содержанию, но первая не меньше по длине', () => {
-  //   assertToBe(isLessOrEqual('abb' + ZERO_CODE_CHAR, 'abb'), false);
-  // });
-  // test('пустые строки', () => {
-  //   assertToBe(isLessOrEqual('', ''), true);
-  // });
-  // test('пустая строка меньше чем непустая строка', () => {
-  //   assertToBe(isLessOrEqual('', ZERO_CODE_CHAR), true);
-  // });
-  // test('не пустая строка больше чем пустая', () => {
-  //   assertToBe(isLessOrEqual(ZERO_CODE_CHAR, ''), false);
-  // });
-  // test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isLessOrEqual('2', 2), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual('2', true), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual('2', []), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual('2', null), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual('2'), 'argument must be type of string');
-  // });
-  // test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
-  //   assertThrow(() => isLessOrEqual(2, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual(true, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual([], '2'), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual(undefined, '2'), 'argument must be type of string');
-  //   assertThrow(() => isLessOrEqual(null, '2'), 'argument must be type of string');
-  // });
+  test('первая строка не меньше второй по первому символу', () => {
+    assertToBe(isLessOrEqual('ac', 'ab'), false);
+    assertToBe(isLessOrEqual('aca', 'aba'), false);
+  });
+  test('первая строка меньше второй по последнему символу', () => {
+    assertToBe(isLessOrEqual('abb', 'abc'), true);
+  });
+  test('первая и вторая равны', () => {
+    assertToBe(isLessOrEqual('abb', 'abb'), true);
+  });
+  test('вторая строка больше первой по последнему символу', () => {
+    assertToBe(isLessOrEqual('abc', 'abb'), false);
+  });
+  test('первая и вторая равны по содержанию, но первая меньше по длине', () => {
+    assertToBe(isLessOrEqual('abb', 'abb' + ZERO_CODE_CHAR), true);
+  });
+  test('первая и вторая равны по содержанию, но первая не меньше по длине', () => {
+    assertToBe(isLessOrEqual('abb' + ZERO_CODE_CHAR, 'abb'), false);
+  });
+  test('пустые строки', () => {
+    assertToBe(isLessOrEqual('', ''), true);
+  });
+  test('пустая строка меньше чем непустая строка', () => {
+    assertToBe(isLessOrEqual('', ZERO_CODE_CHAR), true);
+  });
+  test('не пустая строка больше чем пустая', () => {
+    assertToBe(isLessOrEqual(ZERO_CODE_CHAR, ''), false);
+  });
+  test('несоответствие типа второго аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isLessOrEqual('2', 2), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual('2', true), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual('2', []), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual('2', null), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual('2'), 'argument must be type of string');
+  });
+  test('несоответствие типа первого аргумента приводит к ЛОЖЬ', () => {
+    assertThrow(() => isLessOrEqual(2, '2'), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual(true, '2'), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual([], '2'), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual(undefined, '2'), 'argument must be type of string');
+    assertThrow(() => isLessOrEqual(null, '2'), 'argument must be type of string');
+  });
 });
