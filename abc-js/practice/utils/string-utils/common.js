@@ -27,3 +27,7 @@ export const ZERO_CODE_CHAR = String.fromCharCode(0);
 export function isNotString(text) {
     return typeof(text) !== 'string';
 }
+
+export function isNotNumber(num) {
+    return typeof(num) !== 'number';
+}

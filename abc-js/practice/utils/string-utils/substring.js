@@ -1,5 +1,5 @@
 import { isFloat } from '../number-utils/is-float.js';
-import { isNotString } from './common.js';
+import { isNotNumber, isNotString } from './common.js';
 import { len } from './len.js';
 
 /** Возвращает копию text начиная с индекса start до индекса end.
@@ -9,16 +9,16 @@ import { len } from './len.js';
 export function substring(text, start = 0, end) {
     if (isNotString(text)) throw Error('argument must be type of string');
 
-    if (typeof(start) !== 'number'
+    if (isNotNumber(start)
     || isFloat(start)
     || start < 0) throw Error('invalid start index');
 
-    if (end === undefined) end = text(len);
+    if (end === undefined) end = len(text);
 
-    if (typeof(end) !== 'number'
+    if (isNotNumber(end)
     || len(text) < end
-    || end < 0
-    || isFloat(end)) throw Error('invalid end index');
+    || isFloat(end)
+    || end < 0) throw Error('invalid end index');
 
     if (start > end) throw Error('invalid start and end index');
 

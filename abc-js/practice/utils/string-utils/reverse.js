@@ -1,5 +1,5 @@
-import { isNotString } from "./common";
-import { len } from "./len";
+import { isNotString } from "./common.js";
+import { len } from "./len.js";
 
 /** Возвращает "развернутую" копию text */
 export function reverse(text) {
