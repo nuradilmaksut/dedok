@@ -7,7 +7,5 @@ export function isInRange(num, begin, end) {
     throw Error('all parameter is required and must be number type');
   }
 
-  if (num >= begin && num <= end) return true;
-
-  return false;
+  return num >= begin && num <= end;
 }

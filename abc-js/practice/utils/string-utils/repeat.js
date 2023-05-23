@@ -1,8 +1,9 @@
 import { isFloat } from "../number-utils/is-float.js";
+import { isNotString } from "./common.js";
 
 /** Возвращает text повторенный count раз. */
 export function repeat(text, count = 1) {
-    if (typeof(text) !== 'string') throw Error('argument must be type of string');
+    if (isNotString(text)) throw Error('argument must be type of string');
 
     if (typeof(count) !== 'number'
     || isFloat(count)

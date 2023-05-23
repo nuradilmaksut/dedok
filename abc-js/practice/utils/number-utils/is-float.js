@@ -1,7 +1,5 @@
+import { isInteger } from "./is-integer";
+
 export function isFloat(value) {
-    if (typeof(value) !== 'number') throw Error('value must be only number type');
-
-    if (value % 1 !== 0) return true;
-
-    return false;
+    return !isInteger(value);
 }

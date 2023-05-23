@@ -23,3 +23,7 @@ export const DIGIT_FINISH = 57;
 export const complexText = "Hello world!!! It's terminator";
 
 export const ZERO_CODE_CHAR = String.fromCharCode(0);
+
+export function isNotString(text) {
+    return typeof(text) !== 'string';
+}
