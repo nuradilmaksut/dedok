@@ -32,7 +32,7 @@ export function isMore(firstText, secondText) {
 
 /** возвращает булевый ответ меньше ли параметр firstText чем secondText. */
 export function isLess(firstText, secondText) {
-    return !isMore(firstText, secondText);
+    return !isMoreOrEqual(firstText, secondText);
 }
 
 /** возвращает булевый ответ больше или равно ли параметр firstText чем secondText. */
