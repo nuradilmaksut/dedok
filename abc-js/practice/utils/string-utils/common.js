@@ -1,3 +1,5 @@
+import { isFloat } from "../number-utils/is-float.js";
+
 /** для получения цифры строки по его индексу */
 export const DIGITS = '0123456789';
 export const SIGNS = '+-';
@@ -30,4 +32,8 @@ export function isNotString(text) {
 
 export function isNotNumber(num) {
     return typeof(num) !== 'number';
+}
+
+export function isInvalidIndex(index) {
+    return isNotNumber(index) || isFloat(index) || index < 0;
 }

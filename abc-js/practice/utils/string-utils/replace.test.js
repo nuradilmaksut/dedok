@@ -11,42 +11,42 @@ describe('replaceTests', () => {
     assertToBe(replace('JS is great language', 'great', 'funny'), 'JS is funny language');
     assertToBe(replace(complexText, "It's", "It is not"), 'Hello world!!! It is not terminator');
   });
-  // test('не найденное вхождение, текст остался', () => {
-  //   assertToBe(replace('abc', 'd', 'b'), 'abc');
-  //   assertToBe(replace('JS is great language', 'greet', 'funny'), 'JS is great language');
-  //   assertToBe(replace(complexText, "It`s", "It is"), complexText);
-  // });
-  // test('меняется только первое вхождение в начале строки', () => {
-  //   assertToBe(replace('bbc', 'a', 'b'), 'bbc');
-  //   assertToBe(replace('he he ho he', 'he', 'uh'), 'uh he ho he');
-  // });
-  // test('меняется только первое вхождение в середине строки', () => {
-  //   assertToBe(replace('abb', 'bb', 'um'), 'aum');
-  //   assertToBe(replace('ha he ho he', 'he', 'uh'), 'ha uh ho he');
-  // });
-  // test('удалить вхождение текста (передав пустую строку)', () => {
-  //   assertToBe(replace('abc', 'b', ''), 'ac');
-  //   assertToBe(replace('Hi is guy, my name is Jon', ' is', ''), 'Hi guy, my name is Jon');
-  // });
-  // test('случай, когда заменяемое слово включает слово поиска', () => {
-  //   assertToBe(replace('Happy', 'app', ' app '), 'H app y');
-  // });
-  // test('третий параметр должен быть только строкового типа', () => {
-  //   assertThrow(() => replace('he ha', 'ha'), 'argument target must be type of string');
-  //   assertThrow(() => replace('he ha', 'ha', 2), 'argument target must be type of string');
-  //   assertThrow(() => replace('he ha', 'ha', ['hm']), 'argument target must be type of string');
-  // });
-  // test('второй параметр должен быть только строкового типа', () => {
-  //   assertThrow(() => replace('he ha'), 'argument search must be type of string');
-  //   assertThrow(() => replace('he ha', undefined, 'ha'), 'argument search must be type of string');
-  //   assertThrow(() => replace('he ha', 2, 'ha'), 'argument search must be type of string');
-  // });
-  // test('первый параметр должен быть только строкового типа', () => {
-  //   assertThrow(() => replace(), 'argument text must be type of string');
-  //   assertThrow(() => replace(undefined, 'u', 'a'), 'argument text must be type of string');
-  //   assertThrow(() => replace(25, '2', '5'), 'argument text must be type of string');
-  //   assertThrow(() => replace(true, 'r', 't'), 'argument text must be type of string');
-  // });
+  test('не найденное вхождение, текст остался', () => {
+    assertToBe(replace('abc', 'd', 'b'), 'abc');
+    assertToBe(replace('JS is great language', 'greet', 'funny'), 'JS is great language');
+    assertToBe(replace(complexText, "It`s", "It is"), complexText);
+  });
+  test('меняется только первое вхождение в начале строки', () => {
+    assertToBe(replace('bbc', 'a', 'b'), 'bbc');
+    assertToBe(replace('he he ho he', 'he', 'uh'), 'uh he ho he');
+  });
+  test('меняется только первое вхождение в середине строки', () => {
+    assertToBe(replace('abb', 'bb', 'um'), 'aum');
+    assertToBe(replace('ha he ho he', 'he', 'uh'), 'ha uh ho he');
+  });
+  test('удалить вхождение текста (передав пустую строку)', () => {
+    assertToBe(replace('abc', 'b', ''), 'ac');
+    assertToBe(replace('Hi is guy, my name is Jon', ' is', ''), 'Hi guy, my name is Jon');
+  });
+  test('случай, когда заменяемое слово включает слово поиска', () => {
+    assertToBe(replace('Happy', 'app', ' app '), 'H app y');
+  });
+  test('третий параметр должен быть только строкового типа', () => {
+    assertThrow(() => replace('he ha', 'ha'), 'argument target must be type of string');
+    assertThrow(() => replace('he ha', 'ha', 2), 'argument target must be type of string');
+    assertThrow(() => replace('he ha', 'ha', ['hm']), 'argument target must be type of string');
+  });
+  test('второй параметр должен быть только строкового типа', () => {
+    assertThrow(() => replace('he ha'), 'argument search must be type of string');
+    assertThrow(() => replace('he ha', undefined, 'ha'), 'argument search must be type of string');
+    assertThrow(() => replace('he ha', 2, 'ha'), 'argument search must be type of string');
+  });
+  test('первый параметр должен быть только строкового типа', () => {
+    assertThrow(() => replace(), 'argument text must be type of string');
+    assertThrow(() => replace(undefined, 'u', 'a'), 'argument text must be type of string');
+    assertThrow(() => replace(25, '2', '5'), 'argument text must be type of string');
+    assertThrow(() => replace(true, 'r', 't'), 'argument text must be type of string');
+  });
 });
 
 describe('replaceAllTests', () => {

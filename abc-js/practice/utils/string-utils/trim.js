@@ -1,6 +1,7 @@
 import { len } from "./len.js";
 import { isNotString } from "./common.js";
 import { substring } from "./substring.js";
+import { reverse } from "./reverse.js";
 
 const TRIM_SYMBOLS = ' \n\t\v'; 
 
@@ -29,23 +30,11 @@ export function trimStart(text, trimSymbols=TRIM_SYMBOLS) {
 /** Возвращает копию строки с удаленными символами со строки trimSymbols в конце строки.
  * По умолчанию удаляются символы пробела, табуляции и перевода строки.*/
 export function trimEnd(text, trimSymbols=TRIM_SYMBOLS) {
-    if (isNotString(text)) throw Error('argument text must be type of string')
+    if (isNotString(text)) throw Error('argument text must be type of string');
 
-    if (isNotString(trimSymbols)) throw Error('argument trimSymbols must be type of string');
+    text = reverse(text);
 
-    const textLength = len(text);
-
-    const trimSymbolsLength = len(trimSymbols) - 1;
-
-    for (let i = textLength - 1; i >= 0; i -= 1) {
-        for (let symbolIndex = 0; symbolIndex <= trimSymbolsLength; symbolIndex += 1) {
-            if (text[i] === trimSymbols[symbolIndex]) break;
-
-            if (trimSymbolsLength === symbolIndex) return substring(text, 0, i + 1);
-        }
-    }
-
-    return '';
+    return reverse(trimStart(text, trimSymbols));
 }
 
 /** Возвращает копию строки с удаленными символами

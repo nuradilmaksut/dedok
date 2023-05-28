@@ -1,6 +1,7 @@
-import { isNotNumber, isNotString } from "./common.js";
-import { isFloat } from "../number-utils/is-float.js";
+import { isNotString, isInvalidIndex } from "./common.js";
 import { len } from "./len.js";
+import { substring } from "./substring.js";
+import { isEqual } from './compare.js';
 
 /** Выполняет поиск строки searchString в строке text
  * и возвращает первую найденную позицию.
@@ -12,24 +13,21 @@ export function indexOf(text, searchString, index=0) {
 
     if (isNotString(searchString)) throw Error ('invalid searchString string');
 
-    if (isNotNumber(index)
-    || isFloat(index)
-    || index < 0
-    || index > len(text)) throw Error('invalid index');
+    if (isInvalidIndex(index) || index > len(text)) throw Error('invalid index');
 
-    const searchStringLength = len(searchString) - 1;
+    const searchStringLength = len(searchString);
 
     for (; index < textLength; index += 1) {
         if (text[index] === searchString[0]) {
-            let textIndex = index;
+            let endIndex = index + searchStringLength;
 
-            for (let i = 0; i <= searchStringLength; i += 1) {
-                if (text[textIndex] !== searchString[i]) break;
+            /* Если значение searchString будет длинее чем значение
+             * searchString внутри text.*/
+            if (endIndex > textLength) return -1; 
 
-                textIndex += 1;
+            let substringText = substring(text, index, endIndex);
 
-                if (i === searchStringLength) return index;
-            }
+            if (isEqual(substringText, searchString)) return index;
         }
     }
 
