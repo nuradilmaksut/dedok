@@ -26,4 +26,25 @@ export function replace(text, search, target) {
  * search: строка которое нужно поменять.
  * target: строка, на которую нужно поменять. */
 export function replaceAll(text, search, target) {
+    if (isNotString(text)) throw Error('argument text must be type of string'); 
+    if (isNotString(search)) throw Error('argument search must be type of string');
+    if (isNotString(target)) throw Error('argument target must be type of string');
+
+    let startSearchIndex = indexOf(text, search)
+
+    let countSearchText = 0;
+
+    const searchTextLength = len(search);
+
+    while (startSearchIndex !== -1) {
+        startSearchIndex = indexOf(text, search, startSearchIndex + searchTextLength);
+        
+        countSearchText += 1;
+    }
+
+    for (let count = 1; count <= countSearchText; count += 1) {
+        text = replace(text, search, target);
+    }
+    
+    return text;
 }
