@@ -99,44 +99,44 @@ describe('pad Tests', () => {
         ' '.repeat(19) + 'center align' + ' '.repeat(19)
       );
     });
-    // test('если длина совпадает, то вернется то же значение', () => {
-    //   assertToBe(pad('hehe', 4), 'hehe');
-    // });
-    // test('если макс. длина меньше, то вернется то же значение', () => {
-    //   assertToBe(pad('hehe', 3), 'hehe');
-    //   assertToBe(pad('hehe', 0), 'hehe');
-    //   assertToBe(pad('hehe', -7), 'hehe');
-    // });
-    // test('если макс. длина отсутствует, то вернется то же значение', () => {
-    //   assertToBe(pad('hehe'), 'hehe');
-    // });
-    // test('другая строка заполнения', () => {
-    //   assertToBe(pad('he', 4, '*'), '*he*');
-    //   assertToBe(pad('he', 5, '*'), '**he*');
-    //   assertToBe(pad('he', 6, '*'), '**he**');
-    // });
-    // test('случай с длинной строкой заполнения', () => {
-    //   assertToBe(pad(' hi my friend ', 26, '+-'), '+-+-+- hi my friend +-+-+-');
-    //   assertToBe(pad(' he ', 8, 'Abcd'), 'Ab he Ab');
-    //   assertToBe(pad(' he ', 10, 'Abcd'), 'Abc he Abc');
-    // });
-    // test('строка заполнения не кратен вставке (неполная)', () => {
-    //   assertToBe(pad(' hi my friend ', 25, '+-'), '+-+-+- hi my friend +-+-+');
-    //   assertToBe(pad(' hi my friend ', 24, '+-'), '+-+-+ hi my friend +-+-+');
-    //   assertToBe(pad(' hi my friend ', 23, '+-'), '+-+-+ hi my friend +-+-');
-    //   assertToBe(pad(' he ', 9, 'Abcd'), 'Abc he Ab');
-    // });
-    // test('третий параметр должен быть только строкой', () => {
-    //   assertThrow(() => pad('hehe', 6, 2), 'argument fillString must be type of string');
-    //   assertThrow(() => pad('hehe', 6, true), 'argument fillString must be type of string');
-    // });
-    // test('второй параметр должен быть только числом', () => {
-    //   assertThrow(() => pad('hehe', '6'), 'invalid type of maxLength');
-    //   assertThrow(() => pad('hehe', true), 'invalid type of maxLength');
-    // });
-    // test('первый параметр должен быть только строкой', () => {
-    //   assertThrow(() => pad(), 'argument text must be type of string');
-    //   assertThrow(() => pad(true), 'argument text must be type of string');
-    // });
+    test('если длина совпадает, то вернется то же значение', () => {
+      assertToBe(pad('hehe', 4), 'hehe');
+    });
+    test('если макс. длина меньше, то вернется то же значение', () => {
+      assertToBe(pad('hehe', 3), 'hehe');
+      assertToBe(pad('hehe', 0), 'hehe');
+      assertToBe(pad('hehe', -7), 'hehe');
+    });
+    test('если макс. длина отсутствует, то вернется то же значение', () => {
+      assertToBe(pad('hehe'), 'hehe');
+    });
+    test('другая строка заполнения', () => {
+      assertToBe(pad('he', 4, '*'), '*he*');
+      assertToBe(pad('he', 5, '*'), '**he*');
+      assertToBe(pad('he', 6, '*'), '**he**');
+    });
+    test('случай с длинной строкой заполнения', () => {
+      assertToBe(pad(' hi my friend ', 26, '+-'), '+-+-+- hi my friend +-+-+-');
+      assertToBe(pad(' he ', 8, 'Abcd'), 'Ab he Ab');
+      assertToBe(pad(' he ', 10, 'Abcd'), 'Abc he Abc');
+    });
+    test('строка заполнения не кратен вставке (неполная)', () => {
+      assertToBe(pad(' hi my friend ', 25, '+-'), '+-+-+- hi my friend +-+-+');
+      assertToBe(pad(' hi my friend ', 24, '+-'), '+-+-+ hi my friend +-+-+');
+      assertToBe(pad(' hi my friend ', 23, '+-'), '+-+-+ hi my friend +-+-');
+      assertToBe(pad(' he ', 9, 'Abcd'), 'Abc he Ab');
+    });
+    test('третий параметр должен быть только строкой', () => {
+      assertThrow(() => pad('hehe', 6, 2), 'argument fillString must be type of string');
+      assertThrow(() => pad('hehe', 6, true), 'argument fillString must be type of string');
+    });
+    test('второй параметр должен быть только числом', () => {
+      assertThrow(() => pad('hehe', '6'), 'invalid type of maxLength');
+      assertThrow(() => pad('hehe', true), 'invalid type of maxLength');
+    });
+    test('первый параметр должен быть только строкой', () => {
+      assertThrow(() => pad(), 'argument text must be type of string');
+      assertThrow(() => pad(true), 'argument text must be type of string');
+    });
   });
 });
