@@ -17,6 +17,8 @@ export const RUS_LOWER_START = 1072;
 export const RUS_LOWER_FINISH = 1103;
 export const RUS_CHAR_SHIFT = RUS_LOWER_START - RUS_UPPER_START;
 
+export const ENG_AND_RUS_CHAR_SHIFT = 32
+
 export const DIGIT_START = 48;
 export const DIGIT_FINISH = 57;
 

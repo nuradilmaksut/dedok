@@ -54,7 +54,7 @@ describe('indexOfTests', () => {
   test('начальный индекс больше длины приводит к исключениею', () => {
     assertThrow(() => indexOf(complexText, 't', len(complexText) + 1), 'invalid index');
   });
-  test('дробные числа округляются в индексе приводит к исключению', () => {
+  test('дробные числа в индексе приводит к исключению', () => {
     assertThrow(() => indexOf(complexText, 't', 2.2), 'invalid index');
   });
   test('индекс должен быть только с числовым типом', () => {
