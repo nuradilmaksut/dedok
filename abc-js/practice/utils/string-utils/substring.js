@@ -1,6 +1,5 @@
-import { isFloat } from '../number-utils/is-float.js';
-import { isNotNumber } from './common.js';
 import { len } from './len.js';
+import { isInvalidIndex } from './common.js'
 
 /** Возвращает копию text начиная с индекса start до индекса end.
  * Символ с индексом end не включается в выборку.
@@ -20,6 +19,4 @@ export function substring(text, start = 0, end = len(text)) {
     return substringText; 
 }
 
-function isInvalidIndex(index) {
-    return isNotNumber(index) || isFloat(index) || index < 0;
-}
+
